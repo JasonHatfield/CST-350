@@ -4,9 +4,11 @@ using System.Data.SqlClient;
 
 namespace LoginForm.Services
 {
+#pragma warning disable S101 // Types should be named in PascalCase
     public class SecurityDAO
+#pragma warning restore S101 // Types should be named in PascalCase
     {
-         string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Login Credentials;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private readonly string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=UserManagementDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
          public bool FindUserByNameAndPassword(UserModel user)
          {
@@ -14,9 +16,9 @@ namespace LoginForm.Services
 
              string sqlStatement = "SELECT * FROM dbo.Users WHERE username = @USERNAME and password = @PASSWORD";
 
-             using (SqlConnection connection = new SqlConnection(connectionString))
+             using (SqlConnection connection = new(_connectionString))
              {
-                 SqlCommand command = new SqlCommand(sqlStatement, connection);
+                 SqlCommand command = new(sqlStatement, connection);
 
                  command.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 40).Value = user.UserName;
                  command.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 40).Value = user.Password;
@@ -32,7 +34,7 @@ namespace LoginForm.Services
                  catch (Exception ex)
                  {
                      Console.WriteLine(ex.Message);
-                 };
+                 }
              }
              return success;
          }

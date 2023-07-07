@@ -9891,19 +9891,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Madalina\\.nuget\\packages\\": {}
+    "C:\\Users\\micro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Madalina\\source_2\\repos\\LoginForm\\LoginForm.csproj",
+      "projectUniqueName": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\LoginForm.csproj",
       "projectName": "LoginForm",
-      "projectPath": "C:\\Users\\Madalina\\source_2\\repos\\LoginForm\\LoginForm.csproj",
-      "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Madalina\\source_2\\repos\\LoginForm\\obj\\",
+      "projectPath": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\LoginForm.csproj",
+      "packagesPath": "C:\\Users\\micro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Madalina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9911,6 +9911,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9957,7 +9958,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
