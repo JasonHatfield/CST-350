@@ -1,0 +1,15 @@
+﻿@model LoginForm.Models.UserModel
+
+<div>
+    <h2>Login Failed!</h2>
+    <hr />
+    <p> Error: Invalid Credentials
+        <p></p>
+       <p> We're sorry, but the login information you provided is incorrect. Please double-check your username and password and try again.
+    </p>
+    <p>We apologize for any inconvenience caused.</p>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
