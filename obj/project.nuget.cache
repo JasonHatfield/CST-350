@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5SCe1JxyPYOl8I/EXvQweVqLm29PEl6mSUjdvXWiWvexuZV9ijaDFhvZfwdGUYylSOqN8UyNzIdJbEPQYhLNbg==",
+  "dgSpecHash": "3nO9Li2cR1kzqrZrBS8XscQXtHdrWPXteIoPoUuDwqBDsOLzMCZTe0v2DPsCLQxaub+9yJYa7H02kRId+IsV+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\CST-350-Milestone.csproj",
   "expectedPackageFiles": [
@@ -128,8 +128,7 @@
     "C:\\Users\\bradl\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\bradl\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\bradl\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\bradl\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\bradl\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+    "C:\\Users\\bradl\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
