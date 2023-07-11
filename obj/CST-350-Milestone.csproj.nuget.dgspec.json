@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\CST-350-Milestone.csproj": {}
+    "C:\\Users\\Madalina\\Documents\\GitHub\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\CST-350-Milestone.csproj": {
+    "C:\\Users\\Madalina\\Documents\\GitHub\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\CST-350-Milestone.csproj",
+        "projectUniqueName": "C:\\Users\\Madalina\\Documents\\GitHub\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
         "projectName": "CST-350-Milestone",
-        "projectPath": "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\CST-350-Milestone.csproj",
-        "packagesPath": "C:\\Users\\bradl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bradl\\source\\repos\\CST-350\\CST-350-Milestone\\obj\\",
+        "projectPath": "C:\\Users\\Madalina\\Documents\\GitHub\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
+        "packagesPath": "C:\\Users\\Madalina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Madalina\\Documents\\GitHub\\CST-350-Milestone-Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bradl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Madalina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
