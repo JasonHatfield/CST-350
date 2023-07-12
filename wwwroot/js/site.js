@@ -25,7 +25,7 @@
     // Handle left-click event on cells
     function leftClickEvent(e) {
         e.preventDefault();
-        if (gameEnded || this.dataset.state !== 'hidden') {
+        if (gameEnded) {
             resetGame();
             return;
         }
