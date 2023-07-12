@@ -1,0 +1,25 @@
+﻿@{
+	ViewData["Title"] = "Minesweeper";
+}
+
+<div class="text-center">
+	<h2>@ViewData["Title"]</h2>
+</div>
+
+<div class="game-container">
+	<div id="minesweeper-board" class="minesweeper-board">
+		@for (var row = 0; row < 10; row++)
+		{
+			@for (var col = 0; col < 10; col++)
+			{
+				<div class="cell"></div>
+			}
+		}
+	</div>
+</div>
+
+@section Scripts {
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="~/js/minesweeper.js"></script>
+	<script src="~/js/site.js"></script>
+}

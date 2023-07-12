@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {}
+    "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {
+    "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
+        "projectUniqueName": "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
         "projectName": "CST-350-Milestone",
-        "projectPath": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
+        "projectPath": "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
         "packagesPath": "C:\\Users\\micro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\obj\\",
+        "outputPath": "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\micro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -26,8 +26,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -38,8 +38,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
@@ -65,24 +65,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.32, 3.1.32]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.1.0, 3.1.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

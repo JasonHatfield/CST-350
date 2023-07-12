@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CST_350_Milestone.Models
 {
@@ -70,6 +66,4 @@ namespace CST_350_Milestone.Models
             Password = password;
         }
     }
-
-
 }

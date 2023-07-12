@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sPMnpf85DTUJCZ0RHvwtIsbjbx+KmUS9l2asXaDKCP19g/npVGD4AjZcb8TPc/q+pwL2mize11GjmwjS4i63/g==",
+  "dgSpecHash": "5qTz2K10Mdz4ohmUJ1P1OtMkVNNbqqsUk1g/pAQyL3DYLkMQO2funcs84uvqSl/z61PboOHp9G8/k4vw7UTowA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\micro\\Source\\Repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
+  "projectFilePath": "C:\\Users\\micro\\source\\repos\\CST-350-Milestone-Project\\CST-350-Milestone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micro\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\micro\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -128,11 +128,7 @@
     "C:\\Users\\micro\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\micro\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\micro\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\micro\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\micro\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\micro\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\micro\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\micro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+    "C:\\Users\\micro\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
