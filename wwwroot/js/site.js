@@ -155,12 +155,21 @@
     function showWinPopUp() {
         var cells = document.querySelectorAll('.cell');
         cells.forEach(cell => {
-            if (cell.dataset.state !== 'revealed' && !cell.dataset.hasMine) {
+            if (cell.dataset.state !== 'revealed') {
                 var adjacentCells = getAdjacentCells(cell, cells);
                 var mineCount = adjacentCells.filter(adjCell => adjCell.dataset.hasMine).length;
                 revealCell(cell, mineCount);
             }
         });
+
+        // Reveal cells with bombs
+        cells.forEach(cell => {
+            if (cell.dataset.hasMine) {
+                cell.style.backgroundColor = '#ff0000';
+                cell.innerHTML = '💣';
+            }
+        });
+
         setTimeout(function () {
             alert('Congratulations! You revealed all cells without hitting a mine!');
         }, 100);
