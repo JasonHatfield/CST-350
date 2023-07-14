@@ -34,6 +34,11 @@
             gameStarted = true;
         }
         lastClickedCell = this;
+
+        if (this.dataset.state === 'flagged' || this.dataset.state === 'question') {
+            return;
+        }
+
         if (this.dataset.hasMine) {
             this.style.backgroundColor = '#ff0000';
             this.style.border = '1px solid #000';
