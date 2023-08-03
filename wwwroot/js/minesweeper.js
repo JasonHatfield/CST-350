@@ -28,6 +28,31 @@ function revealCell(cell) {
 function markCell(cell) {
     cell.addClass('flagged');
 }
+function getGameState() {
+    var gameState = [];
+    var cells = $('.cell');
+
+    // Loop through each cell and extract its state
+    cells.each(function () {
+        var cell = $(this);
+        var isRevealed = cell.hasClass('revealed');
+        var isFlagged = cell.hasClass('flagged');
+        var hasMine = cell.data('has-mine');
+        var neighboringMines = parseInt(cell.data('neighboring-mines'));
+
+        var cellState = {
+            revealed: isRevealed,
+            flagged: isFlagged,
+            hasMine: hasMine,
+            neighboringMines: neighboringMines
+        };
+
+        gameState.push(cellState);
+    });
+
+    return gameState;
+}
+
 function saveGame() {
   
     var gameState = JSON.stringify(getGameState()); 
