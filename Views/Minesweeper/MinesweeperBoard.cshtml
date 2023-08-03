@@ -29,12 +29,27 @@
 
 <div class="d-flex justify-content-center m-4">
 	<button id="saveGameButton" class="btn btn-primary">Save Game</button>
+	<button id="showSavedGamesButton" class="btn btn-secondary">Show Saved Games</button>
 </div>
 
 
 @section Scripts {
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="~/js/minesweeper.js"></script>
-	<script src="~/js/site.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/minesweeper.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            assignCellInteractions();
+
+            $("#saveGameButton").on("click", function () {
+                saveGame();
+            });
+
+            $("#showSavedGamesButton").on("click", function () {
+                window.location.href = "/Minesweeper/SavedGames";
+            });
+        });
+    </script>
 }
 

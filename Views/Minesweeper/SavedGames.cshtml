@@ -1,0 +1,40 @@
+﻿@model List<CST_350_Milestone.Models.SavedGameModel>
+
+@{
+    ViewData["Title"] = "Saved Games";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>User ID</th>
+            <th>Timestamp</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model)
+        {
+            <tr>
+                <td>@game.GameId</td>
+                <td>@game.UserId</td>
+                <td>@game.Timestamp</td>
+                <td>
+                    <form method="post" action="/Minesweeper/LoadGame">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="gameId" value="@game.GameId" />
+                        <button type="submit" class="btn btn-primary">Load</button>
+                    </form>
+                    <form method="post" action="/Minesweeper/DeleteGame">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="gameId" value="@game.GameId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
