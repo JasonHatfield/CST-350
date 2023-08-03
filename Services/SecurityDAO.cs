@@ -40,4 +40,25 @@ public class SecurityDAO
 
 		return success;
 	}
+
+	public int GetUserIdByUsername(string username)
+	{
+		string query = "SELECT Id FROM dbo.Users WHERE Username = @Username";
+		using (SqlConnection cn = new SqlConnection(_connectionString))
+		using (SqlCommand cmd = new SqlCommand(query, cn))
+		{
+			cmd.Parameters.AddWithValue("@Username", username);
+			cn.Open();
+			using (SqlDataReader reader = cmd.ExecuteReader())
+			{
+				if (reader.HasRows)
+				{
+					reader.Read();
+					return reader.GetInt32(0);  // return the user's ID
+				}
+			}
+		}
+		return 0;  // return 0 if user not found
+	}
+
 }

@@ -2,6 +2,12 @@
 	ViewData["Title"] = "Minesweeper";
 }
 
+<script>
+	var userId = '@ViewData["UserId"]';
+</script>
+
+<input type="hidden" id="userId" value="@ViewData["UserId"]" />
+
 <p>Current time: @DateTime.Now</p>
 
 <div class="text-center">
@@ -9,6 +15,7 @@
 </div>
 
 <div class="game-container">
+
 	<div id="minesweeper-board" class="minesweeper-board">
 		@for (var row = 0; row < 10; row++)
 		{
@@ -20,8 +27,14 @@
 	</div>
 </div>
 
+<div class="d-flex justify-content-center m-4">
+	<button id="saveGameButton" class="btn btn-primary">Save Game</button>
+</div>
+
+
 @section Scripts {
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="~/js/minesweeper.js"></script>
 	<script src="~/js/site.js"></script>
 }
+

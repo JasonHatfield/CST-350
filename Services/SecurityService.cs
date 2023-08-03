@@ -15,4 +15,9 @@ public class SecurityService
 		return securityDAO.FindUserByNameAndPassword(user);
 		//return knownUsers.Any(x => x.UserName == user.UserName && x.Password == user.Password);
 	}
+
+	public int GetUserIdByUsername(string username)
+	{
+		return securityDAO.GetUserIdByUsername(username);
+	}
 }

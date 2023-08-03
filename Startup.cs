@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace CST_350_Milestone
 {
@@ -19,7 +20,14 @@ namespace CST_350_Milestone
         {
             services.AddControllersWithViews();
             services.AddSingleton(Configuration.GetConnectionString("DefaultConnection"));
-        }
+
+			services.AddSession(options =>
+			{
+				options.IdleTimeout = TimeSpan.FromMinutes(30); // Set a timeout for the session
+				options.Cookie.HttpOnly = true;
+				options.Cookie.IsEssential = true;
+			});
+		}
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -36,7 +44,9 @@ namespace CST_350_Milestone
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+			app.UseSession();
+
+			app.UseRouting();
 
             app.UseAuthorization();
 

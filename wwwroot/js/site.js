@@ -1,4 +1,10 @@
 ﻿window.onload = function () {
+
+    var userId = document.getElementById('userId').value;
+
+    console.log('User ID in JavaScript: ' + userId);
+
+
     // Game variables
     var cells = document.querySelectorAll('.cell');
     var totalCells = cells.length;
@@ -193,4 +199,40 @@
         gameEnded = false;
         lastClickedCell = null;
     }
+
+    function captureGameState(cells) {
+        var gameState = Array.from(cells).map(cell => ({
+            state: cell.dataset.state,
+            hasMine: !!cell.dataset.hasMine
+        }));
+        return gameState;
+    }
+
+
+    $('#saveGameButton').click(function () {
+
+        var gameState = captureGameState(cells);
+        console.log('userId in AJAX call: ' + userId);
+
+        var timestamp = new Date().toISOString();
+
+        console.log('userId in AJAX call: ' + userId);
+
+        $.ajax({
+            url: '/Minesweeper/SaveGame',
+            type: 'POST',
+            data: {
+                userId: userId,
+                timestamp: timestamp,
+                gameState: JSON.stringify(gameState)
+            },
+            success: function (response) {
+                alert('Game saved successfully!');
+            },
+            error: function (error) {
+                alert('Failed to save game.');
+            }
+        });
+    });
+
 };
