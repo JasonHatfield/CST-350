@@ -1,9 +1,11 @@
-﻿@{
+﻿@model string
+@{
 	ViewData["Title"] = "Minesweeper";
 }
 
 <script>
 	var userId = '@ViewData["UserId"]';
+	var savedGameState = @Html.Raw(Model);
 </script>
 
 <input type="hidden" id="userId" value="@ViewData["UserId"]" />
@@ -42,14 +44,42 @@
         $(document).ready(function () {
             assignCellInteractions();
 
-            $("#saveGameButton").on("click", function () {
-                saveGame();
-            });
-
             $("#showSavedGamesButton").on("click", function () {
                 window.location.href = "/Minesweeper/SavedGames";
             });
         });
     </script>
-}
 
+    <script>
+        $(document).ready(function () {
+            if (savedGameState && savedGameState !== '') {
+                initializeGameBoard(savedGameState);
+            }
+        });
+
+        function initializeGameBoard(gameState) {
+            // Convert the gameState from JSON string to an object
+            var boardState = JSON.parse(gameState);
+
+            // Iterate through the rows and columns of the game board
+            for (var row = 0; row < boardState.length; row++) {
+                for (var col = 0; col < boardState[row].length; col++) {
+                    var cellState = boardState[row][col];
+                    var cell = $('.cell').eq(row * 10 + col); // Assuming 10 columns and cells are in a flat list
+
+                    // Apply the saved state to the cell
+                    if (cellState.revealed) {
+                        cell.addClass('revealed');
+                    }
+                    if (cellState.flagged) {
+                        cell.addClass('flagged');
+                    }
+                    if (cellState.hasMine) {
+                        cell.data('has-mine', true);
+                    }
+                    cell.data('neighboring-mines', cellState.neighboringMines);
+                }
+            }
+        }
+    </script>
+}

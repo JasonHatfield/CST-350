@@ -36,18 +36,16 @@ namespace CST_350_Milestone.Controllers
             {
                 var query = "INSERT INTO SavedGames (UserId, Timestamp, GameState) VALUES (@UserId, @Timestamp, @GameState)";
 
-                using (var command = new SqlCommand(query, connection))
-                {
-                    Debug.WriteLine("userId in SaveGame method: " + userId);
+                using var command = new SqlCommand(query, connection);
+                Debug.WriteLine("userId in SaveGame method: " + userId);
 
-                    // Set parameter values
-                    command.Parameters.AddWithValue("@UserId", int.Parse(userId));
-                    command.Parameters.AddWithValue("@Timestamp", DateTime.Parse(timestamp));
-                    command.Parameters.AddWithValue("@GameState", gameState);
+                // Set parameter values
+                command.Parameters.AddWithValue("@UserId", int.Parse(userId));
+                command.Parameters.AddWithValue("@Timestamp", DateTime.Parse(timestamp));
+                command.Parameters.AddWithValue("@GameState", gameState);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
+                connection.Open();
+                command.ExecuteNonQuery();
             }
 
             return Ok();
@@ -81,8 +79,70 @@ namespace CST_350_Milestone.Controllers
                     }
                 }
             }
-
             return View(savedGames);
+        }
+
+        [Route("LoadGame")]
+        public IActionResult LoadGame(int gameId)
+        {
+            SavedGameModel savedGame;
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var query = "SELECT * FROM SavedGames WHERE Id = @GameId";
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@GameId", gameId);
+
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        int userId = reader.GetInt32(1);
+                        string timestamp = reader.GetDateTime(2).ToString();
+                        string gameState = reader.GetString(3);
+
+                        savedGame = new SavedGameModel(gameId, userId, timestamp, gameState);
+                    }
+                    else
+                    {
+                        // Handle case when the game is not found
+                        return NotFound();
+                    }
+                }
+            }
+
+            // Pass the saved game to the view to render the game board
+            return View("MinesweeperBoard", savedGame.GameState);
+        }
+
+        [HttpPost]
+        [Route("DeleteGame")]
+        public IActionResult DeleteGame(int gameId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var query = "DELETE FROM SavedGames WHERE Id = @GameId";
+
+                using var command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@GameId", gameId);
+
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    TempData["DeleteSuccessMessage"] = "Game deleted successfully.";
+                }
+                else
+                {
+                    TempData["DeleteErrorMessage"] = "Game not found or already deleted.";
+                }
+            }
+
+            return RedirectToAction("SavedGames");
         }
     }
 }

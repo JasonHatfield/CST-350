@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="436c4571-0998-431f-9c38-003f60d8d59c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CST-350-Milestone/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/FileContentIndex/369ce190-3d78-43da-affb-20ed88df4c44.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/FileContentIndex/5520a1ca-d633-4bd2-8052-000df00d1f39.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/FileContentIndex/91bf0553-5a6d-45ef-8a82-9ec4557a8b31.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/FileContentIndex/ef595c78-2db9-497b-b43e-94f4dd05628b.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CST-350-Milestone/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CST-350-Milestone/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/CST-350-Milestone/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/CST-350-Milestone/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/cst-350-milestone.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/cst-350-milestone.metadata.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/cst-350-milestone.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/cst-350-milestone.projects.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/CST-350-Milestone.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/CST-350-Milestone.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/CST-350-Milestone.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/CST-350-Milestone.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/CST-350-Milestone.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/CST-350-Milestone.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/project.razor.vs.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/project.razor.vs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2TWAxONb5G1OgIWalzUD9IUh2iy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "BA__Sprint4",
+    "last_opened_file_path": "C:/Users/micro/source/repos/GCU/CST-350/CST-350-Milestone-Project"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="436c4571-0998-431f-9c38-003f60d8d59c" name="Changes" comment="" />
+      <created>1691148709344</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691148709344</updated>
+    </task>
+    <servers />
+  </component>
+</project>
