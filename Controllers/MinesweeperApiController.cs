@@ -1,11 +1,6 @@
 ﻿using CST_350_Milestone.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using CST_350_Milestone.Services;
 
 namespace CST_350_Milestone.Controllers
@@ -22,10 +17,10 @@ namespace CST_350_Milestone.Controllers
         }
 
         [HttpGet]
-        [Route("showSavedGames")]
-        public IActionResult ShowSavedGames()
+        [Route("showAllSavedGames")] // Updated route
+        public IActionResult ShowAllSavedGames()
         {
-            var savedGames = _savedGamesDAO.GetSavedGamesByUserId(HttpContext.Session.GetInt32("UserId") ?? -1);
+            var savedGames = _savedGamesDAO.GetAllSavedGames();
             return Ok(savedGames);
         }
 
@@ -33,7 +28,7 @@ namespace CST_350_Milestone.Controllers
         [Route("showSavedGames/{gameId}")]
         public IActionResult ShowSavedGame(int gameId)
         {
-            var savedGame = _savedGamesDAO.GetSavedGamesByUserId(gameId);
+            var savedGame = _savedGamesDAO.GetSavedGameById(gameId);
             if (savedGame == null)
             {
                 return NotFound();
@@ -45,7 +40,7 @@ namespace CST_350_Milestone.Controllers
         [Route("deleteOneGame/{gameId}")]
         public IActionResult DeleteOneGame(int gameId)
         {
-            var deletedGame = _savedGamesDAO.GetSavedGamesByUserId(gameId);
+            var deletedGame = _savedGamesDAO.DeleteGameById(gameId);
             if (deletedGame == null)
             {
                 return NotFound();
@@ -54,4 +49,3 @@ namespace CST_350_Milestone.Controllers
         }
     }
 }
-

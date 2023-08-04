@@ -46,11 +46,11 @@ namespace CST_350_Milestone.Services
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                var query = "SELECT * FROM SavedGames WHERE GameId = @GameId";
+                var query = "SELECT * FROM SavedGames WHERE Id = @Id";
 
                 using (var command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@GameId", gameId);
+                    command.Parameters.AddWithValue("@Id", gameId);
 
                     connection.Open();
                     var reader = command.ExecuteReader();
@@ -77,7 +77,7 @@ namespace CST_350_Milestone.Services
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    var query = "DELETE FROM SavedGames WHERE GameId = @GameId";
+                    var query = "DELETE FROM SavedGames WHERE Id = @GameId"; // Use 'Id' column name
 
                     using (var command = new SqlCommand(query, connection))
                     {
@@ -91,5 +91,35 @@ namespace CST_350_Milestone.Services
 
             return savedGame;
         }
+
+        public List<SavedGameModel> GetAllSavedGames()
+        {
+            List<SavedGameModel> savedGames = new List<SavedGameModel>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var query = "SELECT * FROM SavedGames";
+
+                using (var command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    var reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int gameId = reader.GetInt32(0);
+                        int UserId = reader.GetInt32(1);
+                        string timestamp = reader.GetDateTime(2).ToString();
+                        string gameState = reader.GetString(3);
+
+                        SavedGameModel savedGame = new SavedGameModel(gameId, UserId, timestamp, gameState);
+                        savedGames.Add(savedGame);
+                    }
+                }
+            }
+
+            return savedGames;
+        }
+
     }
 }
