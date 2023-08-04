@@ -208,6 +208,47 @@
         return gameState;
     }
 
+    function showSavedGames() {
+        $.ajax({
+            type: "GET",
+            url: `/api/showSavedGames`,
+            success: function (savedGames) {
+                // Display saved games in the frontend
+                console.log(savedGames);
+            },
+            error: function () {
+                alert("Failed to get saved games.");
+            }
+        });
+    }
+
+    function showSavedGame(gameId) {
+        $.ajax({
+            type: "GET",
+            url: `/api/showSavedGames/${gameId}`,
+            success: function (savedGame) {
+                // Display saved game in the frontend
+                console.log(savedGame);
+            },
+            error: function () {
+                alert("Failed to get saved game.");
+            }
+        });
+    }
+
+    function deleteOneGame(gameId) {
+        $.ajax({
+            type: "DELETE",
+            url: `/api/deleteOneGame/${gameId}`,
+            success: function (deletedGame) {
+                console.log(deletedGame);
+            },
+            error: function () {
+                alert("Failed to delete game.");
+            }
+        });
+    }
+
 
     $('#saveGameButton').click(function () {
 

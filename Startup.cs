@@ -1,3 +1,4 @@
+using CST_350_Milestone.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,14 +21,15 @@ namespace CST_350_Milestone
         {
             services.AddControllersWithViews();
             services.AddSingleton(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddScoped<SavedGamesDAO>(); // Register SavedGamesDAO as a scoped service
 
-			services.AddSession(options =>
-			{
-				options.IdleTimeout = TimeSpan.FromMinutes(30); // Set a timeout for the session
-				options.Cookie.HttpOnly = true;
-				options.Cookie.IsEssential = true;
-			});
-		}
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set a timeout for the session
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -44,9 +46,9 @@ namespace CST_350_Milestone
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-			app.UseSession();
+            app.UseSession();
 
-			app.UseRouting();
+            app.UseRouting();
 
             app.UseAuthorization();
 
