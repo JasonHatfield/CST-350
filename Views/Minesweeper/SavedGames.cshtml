@@ -6,6 +6,20 @@
 
 <h2>@ViewData["Title"]</h2>
 
+@if (TempData["DeleteSuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["DeleteSuccessMessage"]
+    </div>
+}
+
+@if (TempData["DeleteErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["DeleteErrorMessage"]
+    </div>
+}
+
 <table class="table table-bordered">
     <thead>
         <tr>

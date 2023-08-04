@@ -251,13 +251,9 @@
 
 
     $('#saveGameButton').click(function () {
-
         var gameState = captureGameState(cells);
         console.log('userId in AJAX call: ' + userId);
-
         var timestamp = new Date().toISOString();
-
-        console.log('userId in AJAX call: ' + userId);
 
         $.ajax({
             url: '/Minesweeper/SaveGame',
@@ -276,4 +272,25 @@
         });
     });
 
+    $(document).on("click", ".deleteGameButton", function () {
+        var gameId = $(this).data("gameid");
+
+        $.ajax({
+            url: '/Minesweeper/DeleteGame',
+            type: 'POST',
+            data: {
+                gameId: gameId
+            },
+            success: function (response) {
+                // If the game is deleted successfully, you may want to remove the corresponding
+                // DOM element from the page, or update the list of saved games accordingly.
+                alert(response.message);
+                // Reload the page or update the saved games list if needed.
+                location.reload();
+            },
+            error: function (error) {
+                alert('Failed to delete game.');
+            }
+        });
+    });
 };

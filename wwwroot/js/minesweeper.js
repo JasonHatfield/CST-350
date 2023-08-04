@@ -52,24 +52,3 @@ function getGameState() {
 
     return gameState;
 }
-
-function saveGame() {
-  
-    var gameState = JSON.stringify(getGameState()); 
-
-    $.ajax({
-        type: "POST",
-        url: "/Minesweeper/SaveGame",
-        data: {
-            userId: $("#userId").val(),
-            timestamp: new Date().toISOString(),
-            gameState: gameState
-        },
-        success: function () {
-            alert("Game saved successfully!");
-        },
-        error: function () {
-            alert("An error occurred while saving the game.");
-        }
-    });
-}
