@@ -1,39 +1,52 @@
-﻿@model string
+﻿@model CST_350_Milestone.Models.SavedGameModel
+@using Newtonsoft.Json.Linq;
+
 @{
-	ViewData["Title"] = "Minesweeper";
+    ViewData["Title"] = "Minesweeper";
+    var userId = ViewBag.UserId; // Use ViewBag to get the UserId
 }
 
-<script>
-	var userId = '@ViewData["UserId"]';
-	var savedGameState = @Html.Raw(Model);
-</script>
-
-<input type="hidden" id="userId" value="@ViewData["UserId"]" />
+<input type="hidden" id="userId" value="@userId" /> <!-- Use the UserId from ViewBag -->
 
 <p>Current time: @DateTime.Now</p>
 
 <div class="text-center">
-	<h2>@ViewData["Title"]</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
 
 <div class="game-container">
 
-	<div id="minesweeper-board" class="minesweeper-board">
-		@for (var row = 0; row < 10; row++)
-		{
-			@for (var col = 0; col < 10; col++)
-			{
-				<div class="cell"></div>
-			}
-		}
-	</div>
+    <div id="minesweeper-board" class="minesweeper-board">
+        @if (Model != null)
+        {
+            var savedGameState = Model.GameState;
+            var boardState = Newtonsoft.Json.JsonConvert.DeserializeObject<JArray>(savedGameState);
+
+            @for (var row = 0; row < 10; row++)
+            {
+                for (var col = 0; col < 10; col++)
+                {
+                    var cellState = boardState[row * 10 + col];
+                    var cellClass = cellState["state"].Value<string>() == "revealed" ? "cell revealed" : "cell";
+                    if (cellState["hasMine"].Value<bool>()) cellClass += " flagged";
+                    <div class="@cellClass"></div>
+                }
+            }
+        }
+        else
+        {
+            @for (var i = 0; i < 100; i++)
+            {
+                <div class="cell"></div>
+            }
+        }
+    </div>
 </div>
 
 <div class="d-flex justify-content-center m-4">
-	<button id="saveGameButton" class="btn btn-primary">Save Game</button>
-	<button id="showSavedGamesButton" class="btn btn-secondary">Show Saved Games</button>
+    <button id="saveGameButton" class="btn btn-primary">Save Game</button>
+    <button id="showSavedGamesButton" class="btn btn-secondary">Show Saved Games</button>
 </div>
-
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,16 +55,14 @@
 
     <script>
         $(document).ready(function () {
-            assignCellInteractions();
-
             $("#showSavedGamesButton").on("click", function () {
                 window.location.href = "/Minesweeper/SavedGames";
             });
-        });
-    </script>
 
-    <script>
-        $(document).ready(function () {
+            var savedGameState = '@Html.Raw(Json.Serialize(Model))'; // Wrap the serialized data in single quotes
+
+            console.log("Saved Game State:", savedGameState); // Testing
+
             if (savedGameState && savedGameState !== '') {
                 initializeGameBoard(savedGameState);
             }
@@ -61,23 +72,19 @@
             // Convert the gameState from JSON string to an object
             var boardState = JSON.parse(gameState);
 
-            // Iterate through the rows and columns of the game board
-            for (var row = 0; row < boardState.length; row++) {
-                for (var col = 0; col < boardState[row].length; col++) {
-                    var cellState = boardState[row][col];
-                    var cell = $('.cell').eq(row * 10 + col); // Assuming 10 columns and cells are in a flat list
+            console.log("Board State Before Applying Saved State:", boardState); // Debug
 
-                    // Apply the saved state to the cell
-                    if (cellState.revealed) {
-                        cell.addClass('revealed');
-                    }
-                    if (cellState.flagged) {
-                        cell.addClass('flagged');
-                    }
-                    if (cellState.hasMine) {
-                        cell.data('has-mine', true);
-                    }
-                    cell.data('neighboring-mines', cellState.neighboringMines);
+            // Iterate through the rows and columns of the game board
+            for (var i = 0; i < boardState.length; i++) {
+                var cellState = boardState[i];
+                var cell = $('.cell').eq(i); // Assuming cells are in a flat list
+
+                // Apply the saved state to the cell
+                if (cellState.state === "revealed") {
+                    cell.addClass('revealed');
+                }
+                if (cellState.hasMine) {
+                    cell.addClass('flagged');
                 }
             }
         }

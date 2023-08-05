@@ -105,6 +105,7 @@ namespace CST_350_Milestone.Controllers
                         string gameState = reader.GetString(3);
 
                         savedGame = new SavedGameModel(gameId, userId, timestamp, gameState);
+                        ViewBag.UserId = userId; // Pass UserId to the view using ViewBag
                     }
                     else
                     {
@@ -114,8 +115,8 @@ namespace CST_350_Milestone.Controllers
                 }
             }
 
-            // Pass the saved game to the view to render the game board
-            return View("MinesweeperBoard", savedGame.GameState);
+            // Pass the saved game state as JSON string to the view to render the game board
+            return View("MinesweeperBoard", savedGame);
         }
 
         [HttpPost]
